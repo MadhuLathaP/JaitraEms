@@ -1,0 +1,82 @@
+<div class="container">
+	<!-- 	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="" ng-click="back();setSelectedTab(1)" ui-sref=".home"><i
+				class="glyphicon glyphicon-home"></i></a> 
+				<a class="navbar-brand"
+				ui-sref=".editEmployee"><i class="glyphicon glyphicon-plus"></i>Add Employee </a>
+		</div>
+	</nav> -->
+	<div>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="header">
+
+				<ul class="nav nav-tabs">
+					<li ng-class="{active:isSelectedTab(1)}"><a
+						ng-click="setSelectedTab(1)" ui-sref=".home">Team Members</a></li>
+					<li ng-class="{active:isSelectedTab(2)}"><a
+						ng-click="setSelectedTab(2)">Approvals</a></li>
+					<li ng-class="{active:isSelectedTab(3)}"><a
+						ng-click="setSelectedTab(3)" ui-sref=".leaveSummary">My Info</a></li>
+					<li ng-class="{active:isSelectedTab(4)}"><a
+						ng-click="setSelectedTab(4)">Policies</a></li>
+					<li ng-class="{active:isSelectedTab(5)}"><a
+						ng-click="setSelectedTab(5)" ui-sref=".editEmployee">Add Employee</a></li>
+					<a href="#/login"
+						style="font-family: serif; font-weight: bold; float: right; color: green; margin-top: 1.1%; margin-right: 2%">Sign
+						Out</a>
+				</ul>
+
+			</div>
+		</nav>
+	</div>
+
+	<div ui-view></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 				<ul class="nav nav-tabs">
+					<li><a ui-sref=".home">Team Members</a></li>
+					<li><a ui-sref=".approval">Approvals</a></li>
+					<li><a ui-sref=".leaveSummary">My Info</a></li>
+					<li><a ui-sref=".policies">Policies</a></li>
+				</ul> -->
+
+
+
+<!-- 	<nav class="navbar navbar-default" >
+		<div class="navbar-header">
+			<ul class="nav nav-tabs"ng-init="selectTab('home')">
+				<li ng-class="{}"><a href=""
+					ng-click="selectTab('home')">Team Members</a></li>
+				<li ng-class="{active:tab=='2'}"><a href="#/approvals"
+					data-target="#">Approvals</a></li>
+				<li ng-class="{}"><a href=""
+					ng-click="selectTab('leaveSummary')">My Info</a></li>
+				<li ng-class="{active:tab=='4'}"><a href="#/policies"
+					data-target="#">Policies</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div ng-show="homeHtml" ng-include="'html/home.html'" ng-controller="homeCtrl"></div>
+	<div ng-include="'html/leaveSummary.html'" ng-controller="leaveSummaryCtrl" ng-show="leaveSummaryHtml"></div>
+	 -->

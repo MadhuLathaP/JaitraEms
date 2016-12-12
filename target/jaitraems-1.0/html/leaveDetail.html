@@ -1,0 +1,26 @@
+<div class="modal-body">
+	<div class="row"
+		style="margin-left: 3%; margin-top: 3%; margin-right: 3%;">
+
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th style="width: 11%;" ng-repeat="header in tableHeader">{{header}}</th>
+				</tr>
+			<tbody>
+				<tr ng-repeat="leave in leaveDetail">
+					<td>{{leave.leaveType}}</td>
+					<td>{{leave.fromDate}}</td>
+					<td>{{leave.toDate}}</td>
+					<td>{{leave.totalDays}}</td>
+					<td>{{leave.reason}}</td>
+				</tr>
+			</tbody>
+			</thead>
+		</table>
+		<button class="btn btn-primary" type="button" ng-click="ok()" style="text-align: right;">Ok</button>
+	</div>
+</div>
+<!-- <div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="ok()">Ok</button>
+</div> -->

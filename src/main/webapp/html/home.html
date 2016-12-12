@@ -1,0 +1,67 @@
+<div>
+
+	<div ng-show="homeScreen" ng-init="readAllEmployee()">
+		<table
+			class="table table-striped table-bordered table-hover col-md-12">
+			<thead>
+
+				<tr>
+					<th style="width: 11%;" ng-repeat="header in tableHeader">{{header}}</th>
+				</tr>
+			</thead>
+
+			<!-- 					<th>Employee Id</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Date Of Birth</th>
+					<th>Date Of Birth</th>
+					<th>Email</th>
+					<th>Address</th>
+					<th>Action</th> -->
+			<tbody>
+				<tr ng-repeat="employees in employeelist">
+					<td><a href="" class="btn" title="View Details"
+						ng-click="leavesummary(employees)">{{employees.employeeId}}</a></td>
+					<td>{{employees.firstName}}&nbsp {{employees.lastName}}</td>
+					<!-- 						<td>{{employees.lastName}}</td>-->
+						<td>{{employees.dateOfBirth}}</td>
+						<td>{{employees.dateOfJoining}}</td> 
+					<td>{{employees.email}}</td>
+					<td>{{employees.address}}</td>
+
+					<td style="text-align: center;"><a href=""
+						ng-click="editEmployee(employees); edit()" class="btn"><i
+							class="glyphicon glyphicon-edit" title="Edit"></i> </a> <a
+						href="#/home" class="btn" ng-click="deleteEmployee(employees)"><i
+							class="glyphicon glyphicon-trash" style="color: red;"
+							title="Delete"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="col-md-12" ng-show="employees.length == 0">
+		<div class="col-md-12">
+			<h4>No Employee found</h4>
+		</div>
+	</div>
+
+</div>
+
+
+
+<!-- ********************** Leave Summary ************************** -->
+<div ng-include="'html/leaveSummary.html'"
+	ng-controller="leaveSummaryCtrl" ng-show="leaveSummary"></div>
+
+
+<!-- ********************** include Edit html ************************** -->
+<div ng-include="'html/edit.html'" ng-show="editData"></div>
+
+
+
+
+
+
+
+

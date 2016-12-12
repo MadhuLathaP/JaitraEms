@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+
+
+	<class name="com.jaitra.model.Employee" table="EMPLOYEE">
+
+		<id name="id" type="int" column="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="employeeId" column="employee_id" type="string" />
+		<property name="firstName" column="first_name" type="string" />
+		<property name="lastName" column="last_name" type="string" />
+		<property name="dateOfBirth" column="DOB" type="string" />
+		<property name="dateOfJoining" column="DOJ" type="string" />
+		<property name="email" column="EMAIL" type="string" />
+		<property name="address" column="ADDRESS" type="string" />
+		<property name="pan" column="pan" type="string" />
+		<property name="designation" column="designation" type="string" />
+		<property name="accountNo" column="accountNo" type="string" />
+
+
+	</class>
+
+
+	<!-- LEAVE SUMMARY TABLE -->
+
+	<class name="com.jaitra.model.LeaveSummary" table="LEAVE_SUMMARY">
+		<id name="id" column="id" type="int">
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="empId" column="empId" type="int" />
+		<property name="casualLeave" column="casualLeave" type="int" />
+		<property name="sickLeave" column="sickLeave" type="int" />
+		<property name="sickLeaveUsed" column="sickLeaveUsed" type="int" />
+		<property name="casualLeaveUsed" column="casualLeaveUsed"
+			type="int" />
+		<property name="totalLeaveUsed" column="totalLeaveUsed" type="int" />
+		<property name="totalLeave" column="totalLeave" type="int" />
+
+		<!-- <set name="leaveDetail" cascade="all" lazy="false"> <key column="leaveSummaryid" 
+			/> <one-to-many class="com.jaitra.model.LeaveDetail" /> </set> -->
+	</class>
+
+
+	<!-- LEAVE DETAIL TABLE -->
+
+	<class name="com.jaitra.model.LeaveDetail" table="LEAVE_DETAIL">
+		<id name="leaveDetailId" type="int" column="leaveDetailId">
+			<generator class="increment"></generator>
+		</id>
+		<property name="leaveType" column="leaveType" type="string" />
+		<property name="fromDate" column="fromDate" type="string" />
+		<property name="toDate" column="toDate" type="string" />
+		<property name="numberOfDays" column="numberOfDays" type="int" />
+		<property name="reason" column="reason" type="string" />
+	</class>
+
+
+	<!-- USER TABLE -->
+
+	<class name="com.jaitra.model.User" table="user">
+		<id name="userId" type="int" column="userId">
+		</id>
+		<property name="password" column="password" type="string" />
+		<property name="lastUpdate" column="lastUpdate" type="string" />
+	</class>
+
+
+	<query name="byId">  <![CDATA[from Employee e where e.employeeId=:id]]>
+	</query>
+</hibernate-mapping>

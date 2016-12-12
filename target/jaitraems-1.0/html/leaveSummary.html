@@ -1,0 +1,58 @@
+<div ng-init="readEmployee()">
+
+	<h3 ng-model="employee" style="margin-left: 4%;">
+		{{employee.firstName}} {{employee.lastName}}</h3>
+	<div class="panel panel-info">
+
+		<div class="panel-body" style="margin: -1.5%">
+			<div class="row" style="margin-left: 3%;">
+				<div class="col-lg-6">
+					<h5 ng-model="employee.dateOfBirth">Date Of Birth :
+						{{employee.dateOfBirth}}</h5>
+					<h5 ng-model="employee.dateOfJoining">Date Of Joining :
+						{{employee.dateOfJoining}}</h5>
+					<h5 ng-model="employee.pan">PAN No : {{employee.pan}}</h5>
+					<h5 ng-model="employee.designation">Designation :
+						{{employee.designation}}</h5>
+				</div>
+				<div class="col-lg-6">
+					<h5 ng-model="employee.email">Email : {{employee.email}}</h5>
+					<h5 ng-model="employee.address">Address : {{employee.address}}</h5>
+					<h5 ng-model="employee.employeeId">Employee Id :
+						{{employee.employeeId}}</h5>
+					<h5 ng-model="employee.accountNo">Account No :
+						{{employee.accountNo}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="col-md-12">
+		<table class="table table-striped table-bordered ">
+			<thead>
+				<tr>
+					<th ng-repeat="header in leaveTableHeader">{{header}}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="summary in leaveSummarydata">
+					<td>{{summary.casualLeave}}</td>
+					<td>{{summary.sickLeave}}</td>
+					<td>{{summary.casualLeaveUsed}}</td>
+					<td>{{summary.sickLeaveUsed}}</td>
+					<td>{{summary.totalLeaveUsed}}</td>
+					<td>{{summary.remainingLeaves}}</td>
+					<td style="text-align: center;"><a href=""
+						ng-click="leaveDetails()"><img class="png-icon"
+							src="image/info.png" style="width: 20px" title="Leave Details"></a>
+						<a href="" ng-click="applyLeave()"><img class="png-icon"
+							src="image/apply.png" style="width: 20px; margin-left: 20%;"
+							title="Apply Leave"></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
